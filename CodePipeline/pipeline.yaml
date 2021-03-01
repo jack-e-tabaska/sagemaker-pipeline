@@ -109,7 +109,7 @@ Resources:
             post_build:
               commands:
                 - echo "Cleaning"
-                - rm caltech*
+                - echo "rm caltech*"
           artifacts:
             files:
               - '**/*'
@@ -141,7 +141,7 @@ Resources:
             build:
               commands:
               - echo "Running test.py"
-              - python3 Source/test.py "qa-${AWS::StackName}" "CloudFormation/configuration_qa.json"
+              - echo 'python3 Source/test.py "qa-${AWS::StackName}" "CloudFormation/configuration_qa.json"'
       TimeoutInMinutes: 30
 
   TestEndpointProjectProd:
@@ -170,7 +170,7 @@ Resources:
             build:
               commands:
               - echo "Running test.py"
-              - python3 Source/test.py "prod-${AWS::StackName}" "CloudFormation/configuration_prod.json"
+              - echo 'python3 Source/test.py "prod-${AWS::StackName}" "CloudFormation/configuration_prod.json"'
       TimeoutInMinutes: 30
 
   Pipeline:
