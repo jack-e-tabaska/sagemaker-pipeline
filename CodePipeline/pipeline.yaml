@@ -106,6 +106,7 @@ Resources:
               commands:
                 - echo "Running training.py"
                 - echo "python3 Source/training.py "${SagemakerRole.Arn}" "${DataBucket}" "${AWS::StackName}" $CODEBUILD_RESOLVED_SOURCE_VERSION"
+                - touch CloudFormation/configuration_qa.json
             post_build:
               commands:
                 - echo "Cleaning"
